@@ -1,0 +1,13 @@
+
+
+.HouseHandArea {
+    position: absolute;
+    width: 75dvw;
+    left: 12.5dvw;
+    height: 15dvh;
+    background-color: rgb(8, 52, 6);
+    box-shadow: 0.5dvw 0.5dvh rgb(6, 34, 4);
+    border-radius: 15%;
+    display: flex;
+    place-content: center;
+}

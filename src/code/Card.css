@@ -1,0 +1,25 @@
+
+.Card {
+
+    height: 15dvh;
+    width: 10dvh;
+    background-color: antiquewhite;
+    box-shadow: 0.15dvw 0.15dvh rgb(0, 0, 0);
+    border-radius: 5%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.9rem;
+    margin-left: 0.25dvw;
+}
+
+.Card:hover {
+    background-color: rgb(227, 213, 195);
+}
+
+.CardValue {
+
+    height: 15dvh;
+    width: 10dvh;
+    display: grid;
+    place-content: center;
+    user-select: none;
+}

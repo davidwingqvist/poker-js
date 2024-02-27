@@ -1,0 +1,44 @@
+
+.Background {
+    background-color: rgb(8, 102, 8);
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+
+/*---Button related----*/
+
+.ButtonArea {
+    position: absolute;
+    width: 75dvw;
+    left: 12.5dvw;
+    height: 12.5dvh;
+    top: 65dvh;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.GameButton {
+    position: relative;
+    display: grid;
+    place-content: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: larger;
+    width: 15dvh;
+    height: 12.5dvh;
+    background-color: white;
+    box-shadow: 0.5dvw 0.5dvh rgb(185, 185, 185);
+    border-radius: 25%;
+    user-select: none;
+    margin-left: 1dvw;
+}
+
+.GameButton:hover {
+    background-color: rgb(221, 221, 221);
+}
+
+.GameButton:active {
+    transform: translate3d(0.25dvw, 0.25dvh, 0);
+    box-shadow: 0.25dvw 0.25dvh rgb(185, 185, 185);
+}
