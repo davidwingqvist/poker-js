@@ -6,6 +6,15 @@
     overflow: hidden;
 }
 
+.BoardCards {
+    position: absolute;
+    width: 100dvw;
+    height: 25dvh;
+    top: 25dvh;
+    display: flex;
+    place-content: center;
+}
+
 
 /*---Button related----*/
 
