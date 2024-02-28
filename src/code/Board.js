@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Board.css'
 import Card from './Card'
 import Player from './Player';
@@ -7,8 +7,8 @@ import House from './House';
 export default function Board()
 {
     // Player variables
-    let playerBetAmount = 0;
-    let playerMoneyAmount = 100;
+    const [playerBetAmount, handleBet] = useState(5);
+    const [playerMoneyAmount, handleMoney] = useState(110);
     const [playerCards, handlePlayerCards] = useState([GiveNewCard(), GiveNewCard()]);
     const [isHold, handleHold] = useState(false);
     
@@ -22,9 +22,13 @@ export default function Board()
         handleHouseCards([...houseCards, <Card value={GenerateCard()} type={GenerateType()}/>]);
     }
 
+    useEffect(() => {
+        handleMoney(money => (money - 5))
+    }, [playerBetAmount])
+
     return (
             <div className='Background'>
-                <Player cardsInHand={playerCards}/>
+                <Player cardsInHand={playerCards} betAmount={playerBetAmount} moneyAmount={playerMoneyAmount}/>
                 <House cardsInHand={houseCards} isHold={isHold}/>
 
                 <div className='BoardCards'>
@@ -48,7 +52,9 @@ export default function Board()
                     }}>
                         Hold
                     </div>
-                    <div className='GameButton'>
+                    <div className='GameButton' onClick={() => {
+                        handleBet(bet => (bet + 5))
+                    }}>
                         Bet
                     </div>
 

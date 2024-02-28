@@ -23,3 +23,16 @@
     place-content: center;
     user-select: none;
 }
+
+.CardBack {
+
+    height: 15dvh;
+    width: 10dvh;
+    background-color: rgb(231, 32, 32);
+    box-shadow: 0.15dvw 0.15dvh antiquewhite;
+    border-radius: 5%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.9rem;
+    margin-left: 0.25dvw;
+
+}

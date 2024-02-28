@@ -10,12 +10,26 @@ export default function House(props)
 
     }, [isHold])
 
+    function display()
+    {
+        if(isHold)
+        {
+            return <div className='HouseHandCards'> {(cardsInHand.map(card => (
+            card
+            )))}</div>
+        }
+        else
+        {
+            return <div className='HouseHandCards'> {(cardsInHand.map(card => (
+                <div className='CardBack'></div>
+            )))}</div>
+        }
+    }
+
     return (
             <div className='HouseHandArea'>
                 {
-                    cardsInHand.map(card => (
-                        card
-                    ))
+                    display()
                 }
             </div>
            )

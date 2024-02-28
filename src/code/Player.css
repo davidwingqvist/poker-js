@@ -11,3 +11,16 @@
     display: flex;
     place-content: center;
 }
+
+.PlayerInfoArea {
+    position: absolute;
+    width: 75dvw;
+    left: 12.5dvw;
+    height: 15dvh;
+    top: 50dvh;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.8rem;
+}
