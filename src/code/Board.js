@@ -7,19 +7,25 @@ import House from './House';
 export default function Board()
 {
     // Player variables
+    const [playerValues] = useState([]);
     const [playerBetAmount, handleBet] = useState(5);
-    const [playerMoneyAmount, handleMoney] = useState(110);
+    const [playerMoneyAmount, handleMoney] = useState(105);
     const [playerCards, handlePlayerCards] = useState([GiveNewCard(), GiveNewCard()]);
+    
+    // Button variables
     const [isHold, handleHold] = useState(false);
     
+    // House/Table variables
+    const [houseValues] = useState([]);
+    const [tableValues] = useState([]);
+
     const [houseCards, handleHouseCards] = useState([GiveNewCard(), GiveNewCard()]);
     const [tableCards, handleTableCards] = useState([GiveNewCard(), GiveNewCard(), GiveNewCard()])
 
-
     function AddNewCard()
     {
-        handlePlayerCards([...playerCards, <Card value={GenerateCard()} type={GenerateType()}/>]);
-        handleHouseCards([...houseCards, <Card value={GenerateCard()} type={GenerateType()}/>]);
+        handlePlayerCards([...playerCards, GiveNewCard()]);
+        handleHouseCards([...houseCards, GiveNewCard()]);
     }
 
     useEffect(() => {
@@ -41,7 +47,7 @@ export default function Board()
 
 
                 <div className='ButtonArea'>
-                    <div className='GameButton' onClick={AddNewCard.bind(this)}>
+                    <div className='GameButton' onClick={() => AddNewCard()}>
                         Call
                     </div>
                     <div className='GameButton'>
@@ -65,7 +71,10 @@ export default function Board()
 
 function GiveNewCard()
 {
-    return <Card value={GenerateCard()} type={GenerateType()}/>;
+    const value = GenerateCard();
+    const type = GenerateType();
+    console.log('Value: ' + value + " Type: " + type);
+    return <Card value={value} type={type}/>;
 }
 
 function GenerateCard()
@@ -76,7 +85,7 @@ function GenerateCard()
 function GenerateType()
 {
     const gType = Math.floor((Math.random() * 8) + 1);
-    console.log(gType)
+    //console.log(gType)
     switch(gType)
     {
         case 1:
